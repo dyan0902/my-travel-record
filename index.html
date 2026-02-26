@@ -143,10 +143,20 @@
       .modal-actions button { width: 100%; margin: 0; }
       .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
       table { min-width: 800px; }
-      #tab-reviews table { min-width: 600px; }
-      
-    
+      #tab-reviews table { min-width: 600px; }    
       th, td { white-space: nowrap; }
+      #tab-expenses th:nth-child(2),
+      #tab-expenses td:nth-child(2) {
+        position: sticky;
+        left: 0;
+        background-color: var(--bg-color); 
+        z-index: 2; 
+        box-shadow: 2px 0 5px -2px rgba(0,0,0,0.1); 
+      }
+      
+      #tab-expenses th:nth-child(2) {
+        z-index: 3;
+      }
     }
   </style>
 </head>
@@ -980,4 +990,5 @@ const firebaseConfig = {
 </body>
 
 </html>
+
 
