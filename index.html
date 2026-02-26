@@ -119,9 +119,16 @@
     @media screen and (max-width: 768px) {
       .container { padding: 20px 16px; }
       #trip-list-container { grid-template-columns: 1fr; gap: 16px; }
+      
       .header-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .header-bar button { width: 100%; }
-      .user-info { width: 100%; justify-content: space-between; }
+      /* '돌아가기' 같은 직계 버튼만 100% 적용되도록 > 기호 추가 */
+      .header-bar > button { width: 100%; } 
+      
+     
+      .user-info { width: 100%; flex-wrap: wrap; gap: 8px; }
+      .user-name { width: 100%; display: block; margin-bottom: 2px; }
+      .user-info button { flex: 1; width: auto; margin: 0; }
+      
       .detail-header-wrap { flex-direction: column; gap: 12px; padding: 10px 0 20px 0 !important; }
       .detail-header-wrap > div:last-child { width: 100%; justify-content: flex-end; }
       #detail-tags { flex-wrap: wrap; line-height: 2; }
@@ -137,6 +144,9 @@
       .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
       table { min-width: 800px; }
       #tab-reviews table { min-width: 600px; }
+      
+    
+      th, td { white-space: nowrap; }
     }
   </style>
 </head>
@@ -970,3 +980,4 @@ const firebaseConfig = {
 </body>
 
 </html>
+
